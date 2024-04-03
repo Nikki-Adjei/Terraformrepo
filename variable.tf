@@ -1,4 +1,4 @@
-[200~variable "region_aws" {
+variable "region_aws" {
   default = "eu-west-2"
 }
 
