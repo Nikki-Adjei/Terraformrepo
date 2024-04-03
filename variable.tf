@@ -1,5 +1,5 @@
-[200~variable "region_aws" {
-  default = "eu-west-2"
+variable "region_aws" {
+  default = "us-west-1"
 }
 
 # Create a VPC
