@@ -104,23 +104,19 @@ resource "aws_route" "Test-pub-route-table" {
 }
 
 # Create EIP
-resource "aws_eip" "Test-eip" {
-  vpc = true
-
-  tags = {
-    Name = "Test-eip"
-  }
+resource "aws_eip" "lb" {
+  domain   = "vpc"
 }
 
 # Create Nat Gateway
-resource "aws_nat_gateway" "Test-Nat-gateway1" {
+/*resource "aws_nat_gateway" "Test-Nat-gateway1" {
   subnet_id         = aws_subnet.Test-public-sub1-cidr_block.id
   connectivity_type = "private"
 
   tags = {
     Name = "Test-Nat-gateway1"
   }
-}
+} */
 
 resource "aws_nat_gateway" "Test-Nat-gateway2" {
   allocation_id = aws_eip.Test-eip.id
